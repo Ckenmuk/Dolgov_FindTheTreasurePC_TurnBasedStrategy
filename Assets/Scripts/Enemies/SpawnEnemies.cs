@@ -9,7 +9,7 @@ namespace Quest.Enemies
     {
         [SerializeField] private Enemy enemyPrefab;
         [SerializeField] private float spawnStep = 1f;
-
+        
         private float nextSpawnTime;
 
 
@@ -17,6 +17,7 @@ namespace Quest.Enemies
         {
             if (Time.time > nextSpawnTime)
             {
+                //gameObject.GetComponent<Transform>().localPosition;                 
                 var enemy = Instantiate(enemyPrefab, transform);
                 nextSpawnTime = Time.time + spawnStep;
             }
