@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class IsNextMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private IsNextMove isNextMove;
+
+
     void Start()
+    {
+        
+    }
+
+    private void Awake()
     {
         
     }
