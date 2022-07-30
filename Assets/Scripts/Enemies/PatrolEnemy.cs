@@ -11,19 +11,21 @@ namespace Quest.Enemies
     public class PatrolEnemy : Enemy
     {
 
-        private NavMeshAgent agent;
+        [SerializeField] private NavMeshAgent agent;
+        private float lookLength = 3f;
         [SerializeField] private Transform[] wayPoints;
-
+        private Transform player;
         private int index;
 
-        private float height = 2.0f;
-        private float duration = 0.5f;
+//        private float height = 2.0f;
+//        private float duration = 0.5f;
 
         private void Start()
         {
+            player = FindObjectOfType<Player.PlayersMovement>().transform;
             NavMeshAgent agent = GetComponent<NavMeshAgent>();
             agent.SetDestination(wayPoints[0].position);
-            agent.autoTraverseOffMeshLink = false;
+/*            agent.autoTraverseOffMeshLink = false;
             while (enabled)
             {
                 if (agent.isOnOffMeshLink)
@@ -32,16 +34,28 @@ namespace Quest.Enemies
                 }
 
             }
-
+*/
         }
 
         private void Update()
         {
-
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
                 index = (index + 1) % wayPoints.Length;
                 agent.SetDestination(wayPoints[index].position);
-            
+            }
 
+            if ((player.transform.position - transform.position).magnitude < lookLength)
+            {
+
+                transform.GetComponent<FollowingEnemy>().enabled = true;
+                transform.GetComponent<PatrolEnemy>().enabled = false;
+            }
+            else
+            {
+                transform.GetComponent<FollowingEnemy>().enabled = false;
+                transform.GetComponent<PatrolEnemy>().enabled = true;
+            }
 
         }
 
