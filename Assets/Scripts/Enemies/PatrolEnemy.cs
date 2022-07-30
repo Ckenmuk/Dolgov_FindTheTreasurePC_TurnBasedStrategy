@@ -12,7 +12,7 @@ namespace Quest.Enemies
     {
 
         [SerializeField] private NavMeshAgent agent;
-        private float lookLength = 3f;
+        private float lookLength = 8f;
         [SerializeField] private Transform[] wayPoints;
         private Transform player;
         private int index;
@@ -49,11 +49,13 @@ namespace Quest.Enemies
             {
 
                 transform.GetComponent<FollowingEnemy>().enabled = true;
+                transform.GetComponent<ShootingEnemy>().enabled = true;
                 transform.GetComponent<PatrolEnemy>().enabled = false;
             }
             else
             {
                 transform.GetComponent<FollowingEnemy>().enabled = false;
+                transform.GetComponent<ShootingEnemy>().enabled = false;
                 transform.GetComponent<PatrolEnemy>().enabled = true;
             }
 
