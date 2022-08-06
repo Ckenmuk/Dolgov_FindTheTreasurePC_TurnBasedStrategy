@@ -157,7 +157,7 @@ Transform:
   - {fileID: 1859805133}
   - {fileID: 1482779361}
   m_Father: {fileID: 119148623}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &28675575
 GameObject:
@@ -600,10 +600,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 889496525}
-  - {fileID: 1412845547}
-  - {fileID: 1697481745}
-  - {fileID: 424430234}
+  - {fileID: 621269193}
   - {fileID: 8847250}
   - {fileID: 1958600903}
   - {fileID: 954744359}
@@ -1255,7 +1252,7 @@ GameObject:
   - component: {fileID: 424430235}
   m_Layer: 0
   m_Name: Ground (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -1267,11 +1264,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424430233}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -10, y: 0, z: -10}
   m_LocalScale: {x: 15, y: 20, z: 1}
   m_Children: []
-  m_Father: {fileID: 119148623}
+  m_Father: {fileID: 621269193}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!64 &424430235
@@ -1540,7 +1537,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1750,7 +1747,7 @@ Transform:
   - {fileID: 1077863016}
   - {fileID: 1239126030}
   m_Father: {fileID: 119148623}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &612547107
 GameObject:
@@ -1847,6 +1844,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612547107}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &621269192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 621269193}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &621269193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621269192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 889496525}
+  - {fileID: 1412845547}
+  - {fileID: 1697481745}
+  - {fileID: 424430234}
+  m_Father: {fileID: 119148623}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647380289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2063,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7942131099299352108, guid: 07c492b4e097fc844ae3163823b429f2, type: 3}
+      propertyPath: shootDistance
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c492b4e097fc844ae3163823b429f2, type: 3}
 --- !u!1 &842726572
@@ -2079,7 +2114,7 @@ GameObject:
   - component: {fileID: 889496526}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 3
   m_StaticEditorFlags: 8
@@ -2091,11 +2126,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889496524}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 10, y: 0, z: 10}
   m_LocalScale: {x: 15, y: 20, z: 1}
   m_Children: []
-  m_Father: {fileID: 119148623}
+  m_Father: {fileID: 621269193}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!64 &889496526
@@ -2268,7 +2303,7 @@ Transform:
   - {fileID: 328664408}
   - {fileID: 929523346}
   m_Father: {fileID: 119148623}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1010624814
 GameObject:
@@ -3365,7 +3400,7 @@ GameObject:
   - component: {fileID: 1412845548}
   m_Layer: 0
   m_Name: Ground (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3377,11 +3412,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412845546}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -10, y: 0, z: 10}
   m_LocalScale: {x: 15, y: 20, z: 1}
   m_Children: []
-  m_Father: {fileID: 119148623}
+  m_Father: {fileID: 621269193}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!64 &1412845548
@@ -3891,7 +3926,7 @@ GameObject:
   - component: {fileID: 1697481746}
   m_Layer: 0
   m_Name: Ground (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -3903,11 +3938,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697481744}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 10, y: 0, z: -10}
   m_LocalScale: {x: 15, y: 20, z: 1}
   m_Children: []
-  m_Father: {fileID: 119148623}
+  m_Father: {fileID: 621269193}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!64 &1697481746
@@ -4893,7 +4928,7 @@ Transform:
   - {fileID: 1352642103}
   - {fileID: 647380290}
   m_Father: {fileID: 119148623}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1969660437
 GameObject:
@@ -4910,7 +4945,7 @@ GameObject:
   - component: {fileID: 1969660443}
   - component: {fileID: 1969660444}
   - component: {fileID: 1969660439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5026,6 +5061,7 @@ MonoBehaviour:
   speed: 5
   angularSpeed: 400
   runsSpeed: 5
+  jumpForce: 5
 --- !u!65 &1969660444
 BoxCollider:
   m_ObjectHideFlags: 0
