@@ -1,22 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Quest.Enemies
+namespace Quest.Player
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class Bullet : MonoBehaviour
+    public class Grenade : MonoBehaviour
     {
-        [SerializeField] private float speed = 50f;
-        [SerializeField] private int damage = 2;
+        [SerializeField] private float speed = 10f;
+        [SerializeField] private int damage = 50;
 
         private Rigidbody rb;
 
         private string targetTag;
 
-
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * speed, ForceMode.Impulse);
+            rb.AddForce(transform.forward * speed, ForceMode.Force);
         }
 
         public void Init(string targetTag)

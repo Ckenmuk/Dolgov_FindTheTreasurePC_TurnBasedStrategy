@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Quest.Enemies
@@ -10,8 +8,8 @@ namespace Quest.Enemies
         [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private float spawnStep = 1f;
-        [SerializeField] private float angularSpeed = .5f;
-        [SerializeField] private float shootDistance = 100f;
+        [SerializeField] private float angularSpeed = 1f;
+        [SerializeField] private float shootDistance = 500f;
 
 
         private Transform player;
@@ -39,7 +37,7 @@ namespace Quest.Enemies
 
         private IEnumerator ShootRepeat()
         {
-            Debug.DrawRay(spawnPoint.position, spawnPoint.forward, Color.red, shootDistance);
+            Debug.DrawRay(spawnPoint.position, spawnPoint.forward, Color.red, shootDistance*2);
             while (enabled)
             {
                 LookAtPlayer();
@@ -49,19 +47,13 @@ namespace Quest.Enemies
             yield return null;
         }
 
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawRay(spawnPoint.position, spawnPoint.forward);
-        }
 
         private void Shoot()
         {
-            if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out var hit, shootDistance, playerLayerMask))
-            {
+
             var bullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
             bullet.Init(player.tag);
-            }
+
 
         }
 

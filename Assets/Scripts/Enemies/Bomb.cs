@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Quest.Enemies
 {
     public class Bomb : MonoBehaviour
     {
-        [SerializeField] private float damage = 50f;
+        [SerializeField] private int damage = 50;
 
         private void OnCollisionEnter(Collision collision)
         {

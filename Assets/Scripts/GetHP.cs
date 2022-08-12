@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Quest
 {
     public class GetHP : MonoBehaviour
     {
-        [SerializeField] private float hp = 50f;
+        [SerializeField] private int hp = 50;
 
         private void OnCollisionEnter(Collision collision)
         {
