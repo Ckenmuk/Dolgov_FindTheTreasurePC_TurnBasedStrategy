@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Quest.Enemies
@@ -9,19 +7,25 @@ namespace Quest.Enemies
     {
         [SerializeField] private Enemy enemyPrefab;
         [SerializeField] private float spawnStep = 1f;
+        private const float LifeTime = .5f;
         
-        private float nextSpawnTime;
 
-
-        private void Update()
+        private void Start()
         {
-            if (Time.time > nextSpawnTime)
-            {
-                //gameObject.GetComponent<Transform>().localPosition;                 
-                var enemy = Instantiate(enemyPrefab, transform);
-                nextSpawnTime = Time.time + spawnStep;
-            }
+            InvokeRepeating(nameof(Spawn), 0f, spawnStep);
 
+        }
+
+
+        private void Spawn()
+        {
+            var enemy = Instantiate(enemyPrefab, transform);
+            Destroy(enemy.gameObject, LifeTime);
+        }
+
+        private void OnDisable()
+        {
+            CancelInvoke(nameof(Spawn));
         }
     }
 
